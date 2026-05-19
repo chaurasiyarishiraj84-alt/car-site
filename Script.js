@@ -1,9 +1,10 @@
 // ══════════════════════════════════════════════════
 //  BMW SHOWCASE — script.js
 //  All frontend logic: fetch, filter, render, panel
+//  VERCEL READY VERSION
 // ══════════════════════════════════════════════════
 
-const API_BASE = "http://localhost:3000/api";
+const DATA_FILE = "./cars.json";
 
 // ── STATE ────────────────────────────────────────
 let allCars = [];
@@ -22,7 +23,6 @@ const loader = document.getElementById("loader");
 
 // ── INIT ─────────────────────────────────────────
 window.addEventListener("DOMContentLoaded", () => {
-    // Hide page loader after a short delay
     setTimeout(() => loader.classList.add("hidden"), 1800);
     fetchCars();
     bindFilterTabs();
@@ -30,14 +30,19 @@ window.addEventListener("DOMContentLoaded", () => {
     bindKeyboard();
 });
 
-// ── API: FETCH ALL CARS ───────────────────────────
+// ── FETCH ALL CARS (FROM LOCAL JSON) ─────────────
 async function fetchCars() {
     showLoading(true);
+
     try {
-        const res = await fetch(`${API_BASE}/cars`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        allCars = json.data || [];
+        const res = await fetch(DATA_FILE);
+
+        if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+        }
+
+        allCars = await res.json();
+
         renderGrid(allCars);
         showLoading(false);
     } catch (err) {
@@ -47,13 +52,11 @@ async function fetchCars() {
     }
 }
 
-// ── API: FETCH SINGLE CAR ─────────────────────────
+// ── FETCH SINGLE CAR (FROM MEMORY) ───────────────
 async function fetchCarById(id) {
     try {
-        const res = await fetch(`${API_BASE}/cars/${id}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        return json.data;
+        const car = allCars.find(c => c.id === id);
+        return car || null;
     } catch (err) {
         console.error("Failed to fetch car:", err);
         return null;
@@ -131,6 +134,7 @@ function buildCard(car, index) {
     </div>`;
 
     el.addEventListener("click", () => openPanel(car.id));
+
     el.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -143,7 +147,6 @@ function buildCard(car, index) {
 
 // ── RENDER: DETAIL PANEL ─────────────────────────
 async function openPanel(id) {
-    // Show panel with loading state first
     panelContent.innerHTML = `
     <div style="padding:4rem 2rem;text-align:center;color:var(--muted)">
       <div class="spin"></div>
@@ -157,7 +160,8 @@ async function openPanel(id) {
     const car = await fetchCarById(id);
 
     if (!car) {
-        panelContent.innerHTML = `<p style="padding:2rem;color:var(--accent)">Failed to load vehicle data.</p>`;
+        panelContent.innerHTML =
+            `<p style="padding:2rem;color:var(--accent)">Failed to load vehicle data.</p>`;
         return;
     }
 
@@ -196,7 +200,6 @@ async function openPanel(id) {
       <button class="btn-primary" onclick="handleConfigure(${car.id})">CONFIGURE</button>
     </div>`;
 
-    // Scroll panel to top
     detailPanel.scrollTop = 0;
 }
 
@@ -216,13 +219,17 @@ function bindFilterTabs() {
         const tab = e.target.closest(".filter-tab");
         if (!tab) return;
 
-        document.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
+        document.querySelectorAll(".filter-tab").forEach(t =>
+            t.classList.remove("active")
+        );
 
+        tab.classList.add("active");
         activeFilter = tab.dataset.filter;
-        const filtered = activeFilter === "all"
-            ? allCars
-            : allCars.filter(c => c.category === activeFilter);
+
+        const filtered =
+            activeFilter === "all"
+                ? allCars
+                : allCars.filter(c => c.category === activeFilter);
 
         renderGrid(filtered);
     });
