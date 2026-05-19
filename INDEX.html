@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMW — The Ultimate Collection</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ── LOADER ─────────────────────────────────────────────────────────────── -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">BMW</div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+            <p class="loader-text">Loading Collection…</p>
+        </div>
+    </div>
+
+    <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
+    <header>
+        <nav class="nav">
+            <div class="nav-logo">
+                <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="48" stroke="white" stroke-width="2" />
+                    <circle cx="50" cy="50" r="36" stroke="white" stroke-width="1.5" />
+                    <path d="M50 2 A48 48 0 0 1 98 50 L50 50 Z" fill="white" />
+                    <path d="M50 50 L98 50 A48 48 0 0 1 50 98 Z" fill="#0066CC" />
+                    <path d="M50 98 A48 48 0 0 1 2 50 L50 50 Z" fill="white" />
+                    <path d="M50 50 L2 50 A48 48 0 0 1 50 2 Z" fill="#0066CC" />
+                    <text x="50" y="54" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14"
+                        fill="white">BMW</text>
+                </svg>
+                <span>THE ULTIMATE COLLECTION</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Models</a>
+                <a href="#">Configure</a>
+                <a href="#">Dealers</a>
+            </div>
+            <div class="nav-cta">
+                <button class="btn-outline">Test Drive</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">2024 BMW LINEUP</p>
+            <h1 class="hero-title">
+                <span class="line1">DRIVE</span>
+                <span class="line2">BEYOND</span>
+                <span class="line3">LIMITS</span>
+            </h1>
+            <p class="hero-sub">Six icons. One obsession. Pure driving perfection.</p>
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+                <span>SCROLL TO EXPLORE</span>
+            </div>
+        </div>
+        <div class="hero-stat-strip">
+            <div class="stat"><span class="num">738</span><span class="label">Max HP</span></div>
+            <div class="stat"><span class="num">3.1s</span><span class="label">0–60 mph</span></div>
+            <div class="stat"><span class="num">191</span><span class="label">Top Speed mph</span></div>
+            <div class="stat"><span class="num">6</span><span class="label">Models</span></div>
+        </div>
+    </section>
+
+    <!-- ── FILTER BAR ─────────────────────────────────────────────────────────── -->
+    <section class="filter-section">
+        <div class="filter-label">FILTER BY</div>
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab active" data-filter="all">All Models</button>
+            <button class="filter-tab" data-filter="Sedan">Sedan</button>
+            <button class="filter-tab" data-filter="Coupe">Coupe</button>
+            <button class="filter-tab" data-filter="SUV">SUV</button>
+            <button class="filter-tab" data-filter="Electric">Electric</button>
+            <button class="filter-tab" data-filter="Gran Coupe">Gran Coupe</button>
+            <button class="filter-tab" data-filter="Luxury Sedan">Luxury</button>
+        </div>
+    </section>
+
+    <!-- ── CAR GRID ───────────────────────────────────────────────────────────── -->
+    <main class="gallery-section">
+        <div class="car-grid" id="carGrid">
+            <!-- Cards injected by JS -->
+        </div>
+        <div class="loading-state" id="loadingState">
+            <div class="spin"></div>
+            <p>Fetching vehicles…</p>
+        </div>
+        <div class="error-state hidden" id="errorState">
+            <p>⚠️ Could not load vehicles. Make sure the server is running.</p>
+            <button onclick="fetchCars()">Retry</button>
+        </div>
+    </main>
+
+    <!-- ── DETAIL PANEL ───────────────────────────────────────────────────────── -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+    <aside class="detail-panel" id="detailPanel">
+        <button class="panel-close" id="panelClose" aria-label="Close">
+            <span></span><span></span>
+        </button>
+        <div class="panel-content" id="panelContent">
+            <!-- Injected by JS -->
+        </div>
+    </aside>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="footer-logo">BMW</div>
+        <p>© 2024 Bayerische Motoren Werke AG. All rights reserved.</p>
+        <p class="footer-api">API: <code>/api/cars</code> · <code>/api/cars/:id</code></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

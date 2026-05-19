@@ -1,0 +1,164 @@
+[
+    {
+        "id": 1,
+        "name": "BMW M3 Competition",
+        "year": 2024,
+        "category": "Sedan",
+        "tagline": "The Ultimate Driving Machine",
+        "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+        "badge": "M Performance",
+        "specs": {
+            "engine": "3.0L Inline-6 Twin-Turbo",
+            "power": "503 hp",
+            "torque": "479 lb-ft",
+            "acceleration": "3.8s (0-60 mph)",
+            "topSpeed": "180 mph",
+            "transmission": "8-Speed M Steptronic",
+            "drivetrain": "M xDrive AWD",
+            "mileage": "16 city / 23 hwy mpg"
+        },
+        "price": "$78,900",
+        "description": "The BMW M3 Competition is the pinnacle of sports sedan engineering. Combining raw power with surgical precision, it delivers an adrenaline-charged driving experience that redefines what a four-door car can do on both road and track.",
+        "highlights": [
+            "Active M Differential",
+            "Carbon Fibre Roof",
+            "M Carbon Ceramic Brakes",
+            "Adaptive M Suspension"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "BMW M4 CSL",
+        "year": 2024,
+        "category": "Coupe",
+        "tagline": "Competition. Sport. Lightweight.",
+        "image": "https://images.unsplash.com/photo-1617654112368-307921291f42?w=800&q=80",
+        "badge": "Limited Edition",
+        "specs": {
+            "engine": "3.0L S58 Twin-Turbo",
+            "power": "543 hp",
+            "torque": "479 lb-ft",
+            "acceleration": "3.6s (0-60 mph)",
+            "topSpeed": "191 mph",
+            "transmission": "8-Speed M DCT",
+            "drivetrain": "Rear-Wheel Drive",
+            "mileage": "15 city / 21 hwy mpg"
+        },
+        "price": "$139,900",
+        "description": "A street-legal race car with only 1,000 units produced worldwide. The M4 CSL strips away excess to deliver an uncompromising track weapon. Carbon fibre everywhere, reduced weight, and 543 horses define this collectible masterpiece.",
+        "highlights": [
+            "Carbon Fibre Bucket Seats",
+            "CFRP Hood & Trunk",
+            "Michelin Pilot Sport Cup 2R",
+            "Nürburgring Tuned Suspension"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "BMW XM Label Red",
+        "year": 2024,
+        "category": "SUV",
+        "tagline": "Electrified Performance",
+        "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
+        "badge": "Plug-In Hybrid",
+        "specs": {
+            "engine": "4.4L V8 + Electric Motor",
+            "power": "738 hp",
+            "torque": "738 lb-ft",
+            "acceleration": "3.9s (0-60 mph)",
+            "topSpeed": "168 mph",
+            "transmission": "8-Speed M Steptronic",
+            "drivetrain": "M xDrive AWD",
+            "mileage": "14 mpge combined"
+        },
+        "price": "$185,000",
+        "description": "The most powerful production BMW ever built. The XM Label Red fuses V8 thunder with electric immediacy, producing 738 horsepower in an avant-garde luxury SUV body. It's bold, unapologetic, and utterly unique.",
+        "highlights": [
+            "738 hp Hybrid System",
+            "30+ Mile EV Range",
+            "Bowers & Wilkins Diamond Audio",
+            "Sky Lounge Panoramic Roof"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "BMW i7 M70 xDrive",
+        "year": 2024,
+        "category": "Electric",
+        "tagline": "Future of Luxury",
+        "image": "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=800&q=80",
+        "badge": "Full Electric",
+        "specs": {
+            "engine": "Dual Electric Motors",
+            "power": "650 hp",
+            "torque": "749 lb-ft",
+            "acceleration": "3.7s (0-60 mph)",
+            "topSpeed": "155 mph",
+            "transmission": "Single-Speed Automatic",
+            "drivetrain": "xDrive AWD",
+            "mileage": "300 mi range"
+        },
+        "price": "$157,000",
+        "description": "The i7 M70 xDrive reimagines what a luxury sedan can be. With 650 electric horsepower, a theatre screen for rear passengers, and a range of 300 miles, it's the ultimate expression of sustainable opulence.",
+        "highlights": [
+            "31.3\" Rear Theatre Screen",
+            "Executive Lounge Seating",
+            "Level 2 Autonomous Driving",
+            "Crystal Headlights"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "BMW M8 Gran Coupe",
+        "year": 2024,
+        "category": "Gran Coupe",
+        "tagline": "Four-Door Supercar",
+        "image": "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800&q=80",
+        "badge": "M Competition",
+        "specs": {
+            "engine": "4.4L V8 Twin-Turbo",
+            "power": "617 hp",
+            "torque": "553 lb-ft",
+            "acceleration": "3.1s (0-60 mph)",
+            "topSpeed": "190 mph",
+            "transmission": "8-Speed M Steptronic",
+            "drivetrain": "M xDrive AWD",
+            "mileage": "14 city / 20 hwy mpg"
+        },
+        "price": "$135,000",
+        "description": "The M8 Gran Coupe challenges every expectation. Four doors, 617 hp, and a roofline so dramatic it belongs in an art museum. This is what happens when a supercar grows up without losing its soul.",
+        "highlights": [
+            "V8 with M TwinPower Turbo",
+            "Carbon Ceramic Brakes",
+            "Merino Full Leather Interior",
+            "Head-Up Display"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "BMW 7 Series",
+        "year": 2024,
+        "category": "Luxury Sedan",
+        "tagline": "Redefining Luxury",
+        "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&q=80",
+        "badge": "Flagship",
+        "specs": {
+            "engine": "3.0L Inline-6 Mild Hybrid",
+            "power": "375 hp",
+            "torque": "398 lb-ft",
+            "acceleration": "4.8s (0-60 mph)",
+            "topSpeed": "155 mph",
+            "transmission": "8-Speed Steptronic",
+            "drivetrain": "xDrive AWD",
+            "mileage": "22 city / 29 hwy mpg"
+        },
+        "price": "$97,000",
+        "description": "The 7 Series flagship redefines what a luxury saloon should look, feel, and perform like. From its iconic kidney grille to the hand-stitched leather sanctuary of its cabin, every detail radiates purposeful opulence.",
+        "highlights": [
+            "Rear-Axle Steering",
+            "Integral Active Steering",
+            "Massage Seats (4-zone)",
+            "Gesture Control"
+        ]
+    }
+]
